@@ -5,7 +5,7 @@ $katasuniai = 0;
 
 for($i = 1; $i <= $kates; $i++){
     for($j = 1; $j <= $sunys; $j++){
-        if(rand(0,1)){
+        if($pavyko = rand(0,1)){
             $katasuniai++;
             break;
         }
