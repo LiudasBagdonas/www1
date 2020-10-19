@@ -1,15 +1,12 @@
 <?php
-$kates = rand(1,3);
-$sunys = rand(1,3);
-$katasuniai = 0;
+$months = 12;
+$wallet = 1000;
+$month_income = 700;
 
-for($i = 1; $i <= $kates; $i++){
-    for($j = 1; $j <= $sunys; $j++){
-        if($pavyko = rand(0,1)){
-            $katasuniai++;
-            break;
-        }
-    }
+
+for($i = 1; $i <= $months; $i++){
+    $wallet += $month_income;
+    $wallet -= $month_expenses = rand(300, 1100);
 }
 ?>
 <html lang="en">
@@ -18,8 +15,7 @@ for($i = 1; $i <= $kates; $i++){
     <title>Ciklai</title>
 </head>
 <body>
-    <h1>Katasuniu Iseiga</h1>
-    <h2>Dalyvavo <?php print $kates ?> kates ir <?php print $sunys ?> sunys</h2>
-    <h3>Katasuniu iseiga: <?php print $katasuniai ?></h3>
+    <h1>Wallet Forecast</h1>
+    <h2>Po <?php print $months; ?> m., prognozuojamas likutis <?php print $wallet; ?>.</h2>
 </body>
 </html>
