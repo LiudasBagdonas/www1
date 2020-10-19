@@ -3,10 +3,8 @@ $stars_count = rand(5,80);
 $line = '';
 
 for($i = 0; $i <= $stars_count; $i++){
-    for($j = 0; $j <= $stars_count; $j++){
-        if($j <= $stars_count){
+    for($j = 0; $j <= $i; $j++){
             $line .= '*';
-        }
     }
     $line .= '<br>';
 }
