@@ -8,6 +8,8 @@ for($i = 1; $i <= $months; $i++){
     $wallet += $month_income;
     $wallet -= $month_expenses = rand(300, 1100);
 }
+
+$h2 = "Po $months m., prognozuojamas likutis $wallet."
 ?>
 <html lang="en">
 <head>
@@ -16,6 +18,6 @@ for($i = 1; $i <= $months; $i++){
 </head>
 <body>
     <h1>Wallet Forecast</h1>
-    <h2>Po <?php print $months; ?> m., prognozuojamas likutis <?php print $wallet; ?>.</h2>
+    <h2><?php print $h2; ?></h2>
 </body>
 </html>
