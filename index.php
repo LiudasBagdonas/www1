@@ -16,9 +16,9 @@ $sec = 60;
         $dist = $speed_of_sound * $i;
         $leftover = $dist % 100 * 0.01;
         for($j = 1; $j <= $dist / 100; $j++){
-                $db_max -= $db_max / 100 * 9;
+                $db_max -= $db_max / 100 * 16;
         }
-            $db_max -= $db_max / 100 * 9 * $leftover;
+            $db_max -= $db_max / 100 * 16 * $leftover;
             print "<p>Po $i sec. ($dist m.): $db_max</p>" ;
         }
         ?>
