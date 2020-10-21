@@ -1,53 +1,25 @@
 <?php
-$products = [
-   [
-       [
-       'product' => 'Kiausiniai',
-       'count' => 3,
-       'image' => 'kiausinis.png',
-       ],
-       [
-           'product' => 'Grietine',
-           'count' => 1,
-           'image' => 'grietine.png',
-       ],
-       [
-           'product' => 'Jogurtas',
-           'count' => 2,
-           'image' => 'jogurtas.png',
-       ],
-       [
-           'product' => 'Zuvis',
-           'count' => 0,
-           'image' => 'zuvis.png',
-       ],
-
-   ],
+$tracks = [
     [
-        [
-            'product' => 'Pienas',
-            'count' => 1,
-            'image' => 'pienas.png',
+        'available' => true,
+        'pins' => [
+            [true],
+            [false, false],
+            [false, false, false],
+            [true, true, true, true]
         ],
-        [
-            'product' => 'Kefyras',
-            'count' => 0,
-            'image' => 'kefyras.png',
+    ],
+    [
+        'available' => false,
+        'pins' => [
+            [false],
+            [false, false],
+            [false, false, false],
+            [false, false, false, false]
         ],
-        [
-            'product' => 'Degtine',
-            'count' => 2,
-            'image' => 'degtine.png',
-        ],
-        [
-            'product' => 'Kecupas',
-            'count' => 2,
-            'image' => 'kecupas.png',
-        ],
-
     ],
 ];
-var_dump($products);
+var_dump($tracks);
 ?>
 <html lang="en">
 <head>
