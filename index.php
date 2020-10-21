@@ -1,6 +1,34 @@
 <?php
-$speed_of_sound = 333;
-$sec = 60;
+$players = [
+    [
+        'name'  => 'Petras Pizdžis',
+        'items' => [
+            [
+                'name' => 'telefonas',
+                'status' => 'prap*stas'
+            ]
+        ],
+    ],
+    [
+        'name'  => 'Tomas Ablomas',
+        'items' => [
+            [
+                'name' => 'buljonas',
+                'status'    => 'naudojamas'
+            ]
+        ],
+    ],
+    [
+        'name'  => 'Ana Shitkova',
+        'items' => [
+            [
+                'name' => 'rulonas',
+                'status'    => 'pasibaigęs'
+            ]
+        ],
+    ]
+];
+var_dump($players);
 ?>
 <html lang="en">
 <head>
@@ -10,18 +38,4 @@ $sec = 60;
     </style>
 </head>
 <body>
-    <h1>Griaustinio zona</h1>
-    <article><?php for($i = 1; $i <= 60; $i++){
-        $db_max = 120;
-        $dist = $speed_of_sound * $i;
-        $leftover = $dist % 100 * 0.01;
-        for($j = 1; $j <= $dist / 100; $j++){
-                $db_max -= $db_max / 100 * 16;
-        }
-            $db_max -= $db_max / 100 * 16 * $leftover;
-            print "<p>Po $i sec. ($dist m.): $db_max</p>" ;
-        }
-        ?>
-    </article>
-</body>
 </html>
