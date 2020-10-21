@@ -1,34 +1,53 @@
 <?php
-$players = [
+$products = [
+   [
+       [
+       'product' => 'Kiausiniai',
+       'count' => 3,
+       'image' => 'kiausinis.png',
+       ],
+       [
+           'product' => 'Grietine',
+           'count' => 1,
+           'image' => 'grietine.png',
+       ],
+       [
+           'product' => 'Jogurtas',
+           'count' => 2,
+           'image' => 'jogurtas.png',
+       ],
+       [
+           'product' => 'Zuvis',
+           'count' => 0,
+           'image' => 'zuvis.png',
+       ],
+
+   ],
     [
-        'name'  => 'Petras Pizdžis',
-        'items' => [
-            [
-                'name' => 'telefonas',
-                'status' => 'prap*stas'
-            ]
+        [
+            'product' => 'Pienas',
+            'count' => 1,
+            'image' => 'pienas.png',
         ],
+        [
+            'product' => 'Kefyras',
+            'count' => 0,
+            'image' => 'kefyras.png',
+        ],
+        [
+            'product' => 'Degtine',
+            'count' => 2,
+            'image' => 'degtine.png',
+        ],
+        [
+            'product' => 'Kecupas',
+            'count' => 2,
+            'image' => 'kecupas.png',
+        ],
+
     ],
-    [
-        'name'  => 'Tomas Ablomas',
-        'items' => [
-            [
-                'name' => 'buljonas',
-                'status'    => 'naudojamas'
-            ]
-        ],
-    ],
-    [
-        'name'  => 'Ana Shitkova',
-        'items' => [
-            [
-                'name' => 'rulonas',
-                'status'    => 'pasibaigęs'
-            ]
-        ],
-    ]
 ];
-var_dump($players);
+var_dump($products);
 ?>
 <html lang="en">
 <head>
@@ -38,4 +57,6 @@ var_dump($players);
     </style>
 </head>
 <body>
+
+</body>
 </html>
