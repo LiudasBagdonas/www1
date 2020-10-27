@@ -1,23 +1,20 @@
 <?php
-$array = [
-    [1, 0, 0,],
-    [1, 1, 0,],
-    [1, 0, 1,],
-];
+$string = "20.3k 3.8k 7.7k 992";
+$string_arr = explode(' ', $string);
+$new_arr = [];
 
-$array_reverse = [];
-
-foreach($array as $row_index => $row) {
-    foreach ($row as $col_index => $value) {
-        if ($value === 1) {
-            $array_reverse[$row_index][$col_index] = 0;
-        } else {
-            $array_reverse[$row_index][$col_index] = 1;
-        }
+foreach ($string_arr as $value) {
+    if(substr($value, - 1) === 'k'){
+        $value = rtrim($value, "k");
+        $value *= 1000;
+        $new_arr[] = intval($value);
+    } else {
+        $value *= 1;
+        $new_arr[] = $value;
     }
 }
 
-var_dump($array_reverse);
+var_dump($new_arr)
 ?>
 <html lang="en">
 <head>
