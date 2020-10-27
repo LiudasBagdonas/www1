@@ -1,15 +1,23 @@
 <?php
-$array1 = [
-    [1, 2, 3,],
-    [2, 3, 4,],
+$array = [
+    [1, 0, 0,],
+    [1, 1, 0,],
+    [1, 0, 1,],
 ];
-$array2 =[];
 
-foreach ($array1 as $index => $value) {
+$array_reverse = [];
 
+foreach($array as $row_index => $row) {
+    foreach ($row as $col_index => $value) {
+        if ($value === 1) {
+            $array_reverse[$row_index][$col_index] = 0;
+        } else {
+            $array_reverse[$row_index][$col_index] = 1;
+        }
+    }
 }
 
-var_dump($array2);
+var_dump($array_reverse);
 ?>
 <html lang="en">
 <head>
