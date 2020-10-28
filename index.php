@@ -1,15 +1,25 @@
 <?php
-$x = rand(1,10);
-$y = rand(1,10);
-
-function sum($x, $y){
-    return $x + $y;
+$x = rand(1,101);
+$h1 = '';
+function is_prime($x){
+   if ($x === 1){
+       return false;
+   }
+   for ($i = 2; $i <= $x/2; $i++){
+       if($x % $i == 0){
+           return false;
+       }
+   }
+    return true;
 
 }
+if(is_prime($x)){
+    $h1 = "$x is prime";
+} else {
+    $h1 = "$x is not prime";
+}
 
-$sum = sum($x, $y);
 
-$h1 = "$x + $y = $sum";
 ?>
 <html lang="en">
 <head>
@@ -18,6 +28,6 @@ $h1 = "$x + $y = $sum";
     <link rel="stylesheet" href="style.css?<?php print time(); ?>">
 </head>
 <body>
-    <h1><?php print $h1; ?></h1>
+   <?php print $h1; ?>
 </body>
 </html>
