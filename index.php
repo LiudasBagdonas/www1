@@ -1,5 +1,29 @@
 <?php
 $size = 3;
+$random_array =
+    [
+        ['4asd4sa4d', 'ad45s564f6ds', 'sdf54sdf',],
+        [
+            'fsfdfsdfdsfdsf',
+            [
+                    'fdssdfdsfdsf', 'sdfdsfdsfds',
+            ],
+        ],
+        ['fdsfdsfdsfds'],
+        ['sdfdsfsdf']
+    ];
+
+function print_array($random_array) {
+    $array_to_return = [];
+    for ($i = 0; $i <= count($random_array); $i++) {
+        foreach ($random_array as $index => $value) {
+            if ($index[$value]);
+        }
+    }
+    return $array_to_return;
+}
+$array_formated = print_array($random_array);
+var_dump($array_formated);
 
 function generate_matrix($size){
     $array = [];
@@ -35,7 +59,7 @@ var_dump($winner_list);
 <body>
     <table>
     <?php foreach ($array as $index => $value): ?>
-        <tr class="<?php $index = in_array($index, $winner_list) ? print 'win_border' : ''; ?>">
+        <tr class="<?php if ($index = in_array($index, $winner_list)) print 'win_border'; ?>">
             <?php foreach ($value as $line): ?>
                 <td class="<?php print $line ? 'green' : 'red'; ?> "></td>
             <?php endforeach; ?>
