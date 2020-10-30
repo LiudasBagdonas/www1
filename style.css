@@ -1,17 +1,8 @@
 body {
     background-color: darkgrey;
 }
-td {
-    height: 40px;
-    width: 40px;
-    margin: 2px;
-}
-.green {
-    background-color: green;
-}
-.red {
-    background-color: red;
-}
-.win_border td{
- background-color: yellow;
+form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
 }

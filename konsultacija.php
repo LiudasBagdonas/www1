@@ -1,106 +1,41 @@
 <?php
+$movies =
+    [
+        [
+            'name' => 'Avatar',
+            'director' => 'James Cameron',
+            'image' => 'https://static.wixstatic.com/media/00f4ca_4b183e5a23a443119c3e54bc20474422~mv2.jpg',
+            'genres' => ['Action', 'Adventure', 'Action',],
+            'actors' => ['Sam Wortinghem', 'Zoe Saldma', 'Sigonrey Wildman',],
+            'year' => 2013,
+        ],
+        [
+            'name' => 'Avengers: Endgame',
+            'director' => 'Anthony Russe',
+            'image' => 'https://i.pinimg.com/originals/92/c8/e0/92c8e00b34fcfdeaf605a0647c21adb3.jpg',
+            'genres' => ['Action', 'Adventure', 'Drama',],
+            'actors' => ['Roben Downey Jr.', 'Chris Evans', 'Seman Harleydavidson',],
+            'year' => 2014,
+        ],
+        [
+            'name' => 'Django Unchained',
+            'director' => 'Quentin Tarantine',
+            'image' => 'https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_UY1200_CR90,0,630,1200_AL_.jpg',
+            'genres' => ['Drama', 'Western',],
+            'actors' => ['Jame Foxx', 'Cristoug Waltz', 'Leonardo DiCaprio',],
+            'year' => 2012,
+        ],
+    ];
 
-function make_deck(){
-    $cards_numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A',];
-    $cards_type = ['Cirvu', 'Zvonku', 'Vynu', 'Kryziu'];
-    $full_deck = [];
 
-    foreach ($cards_type as $type) {
-        foreach($cards_numbers as $number){
-            $full_deck[] = [
-                'type' => $type,
-                'number' => $number,
-            ];
+function add_name(&$movies, $movie, $name) {
+    foreach ($movies as &$movie_name) {
+        if($movie_name['name'] === $movie) {
+            $movie_name['actors'][] = $name;
         }
     }
-    return $full_deck;
 }
-
-function draw_cards($full_deck) {
-    $cards = [];
-    for ($i = 1; $i <= 5; $i++){
-        $rand_numb = rand(0, count($full_deck)-1);
-
-        $cards[] = [
-            'type' => $full_deck[$rand_numb]['type'],
-            'number' => $full_deck[$rand_numb]['number'],
-            ];
-        unset($full_deck[$rand_numb]);
-        sort($full_deck);
-    }
-    return $cards;
-}
-
-$full_deck = make_deck();
-$drawed_cards = draw_cards($full_deck);
-
-function is_flush($drawed_cards) {
-    $is_flush = 1;
-    for ($i = 1; $i <= 4; $i++) {
-
-        if ($drawed_cards[0]['type'] === $drawed_cards[$i]['type']) {
-            $is_flush += 1;
-        } else {
-            break;
-        }
-    }
-
-    if ($is_flush === 5) {
-        return 'Yay, flush!';
-    } else {
-        return 'Fuck, no flush :(';
-    }
-}
-
-$flush = is_flush($drawed_cards);
-
-function count_pair($drawed_cards) {
-    $same = [];
-
-        for ($i = 0; $i < 5; ++$i) {
-            $card = $drawed_cards[$i]['number'];
-            if (isset($same[$card])) {
-                $same[$card]++;
-            } else {
-                $same[$card] = 1;
-            }
-
-        }
-
-    return $same;
-}
-
-$pairs = count_pair($drawed_cards);
-
-function pair_check($pairs){
-var_dump($pairs);
-    $pairs_count = 0;
-    foreach ($pairs as $value) {
-        if ($value === 2) {
-            $pairs_count += 1;
-        }
-        if ($value === 3) {
-
-            if($pairs_count === 1){
-                return 'Full House';
-            }
-            return 'Three of a kind';
-        }
-        if ($value === 4) {
-            return 'Four of a kind';
-        }
-    }
-    return "$pairs_count poros";
-}
-
-$fullhouse = [
-        2 => 1,
-        3 => 3,
-        4 => 1,
-];
-$have_pair = pair_check($fullhouse);
-var_dump($have_pair);
-
+add_name($movies, 'Avatar', 'Liudas Bagdonas');
 ?>
 <html lang="en">
 <head>
@@ -111,62 +46,44 @@ var_dump($have_pair);
         article {
             display: flex;
         }
-        .card {
+        section {
+            width: 200px;
+            border: 1px solid transparent;
+            background-color: lightgrey;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
             height: 200px;
-            width: 120px;
-            margin: 10px;
-            position: relative;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        span {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 25px;
-        }
-        .cirvu, .zvonku {
-            color: red;
-            border: 1px solid red;
-        }
-        .vynu, .kryziu {
-            color: black;
-            border: 1px solid black;
-        }
-        .card-img-box {
-            height: 80px;
-            width: 80px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        .card-img-box-vynu {
-            background-image: url("https://p7.hiclipart.com/preview/285/616/906/ace-of-spades-computer-icons-playing-card-symbol.jpg");
-        }
-        .card-img-box-zvonku {
-            background-image: url("https://www.clipartkey.com/mpngs/m/16-160726_diamond-card-symbol-png.png");
-        }
-        .card-img-box-kryziu {
-            background-image: url("https://img1.pnghut.com/7/9/8/L3AVCLXpBE/suit-playing-card-silhouette-spades-standard-52card-deck.jpg");
-        }
-        .card-img-box-cirvu {
-            background-image: url("https://img1.pnghut.com/5/19/5/djZxQVJJU2/tree-flower-frame-cartoon-heart.jpg");
         }
     </style>
 </head>
 <body>
     <article>
-        <?php foreach ($drawed_cards as $card): ?>
-            <div class="card <?php print $card['type']; ?> ">
-                <span><?php print $card['number']; ?></span>
-                <div class="card-img-box card-img-box-<?php print $card['type']; ?>">
-                </div>
-            </div>
+        <?php foreach ($movies as $index => $value): ?>
+            <section>
+                <h1><?php print $movies[$index]['name']; ?></h1>
+                <h2><?php print $movies[$index]['director']; ?></h2>
+                <img src="<?php print $movies[$index]['image']; ?>" alt="">
+                <h4>Genre:
+                    <?php foreach ($value['genres'] as $item): ?>
+                        <?php $genres[] = $item; ?>
+                    <?php endforeach; ?>
+                    <?php print implode(', ', $genres); $genres = []; ?>
+                </h4>
+                <ul>Actors:
+                    <?php foreach ($value['actors'] as $item): ?>
+                        <li>
+                            <?php print $item; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </section>
         <?php endforeach; ?>
     </article>
-    <h1><?php print $flush; ?></h1>
-    <h1><?php print $have_pair; ?></h1>
 </body>
 </html>

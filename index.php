@@ -1,36 +1,13 @@
 <?php
-//$gatve = [];
-$letters = ['g', 's', 'r', 'p', 'F', 'r', 'R', 'Q',];
-$value = 'r';
-$to = '8';
+var_dump($_POST);
+$answer = '';
 
-/**
- * @param array $letters
- * @param string $value
- * @return int
- */
-function count_values($letters, $value) {
-    $count = 0;
-    foreach ($letters as $letter) {
-        if ($letter === $value) {$count += 1;}
-    }
-    return $count;
+if(isset($_POST['number']) && isset($_POST['mygtukas_kvadratas'])) {
+    $answer = $_POST['number'] ** 2;
 }
-
-$result = count_values($letters, $value);
-var_dump($result);
-
-function change_values(&$letters, $value, $to) {
-    foreach ($letters as &$letter) {
-        if ($letter === $value) {
-            $letter = $to;
-        }
-    }
+if(isset($_POST['number']) && isset($_POST['mygtukas_saknis'])) {
+    $answer = sqrt($_POST['number']);
 }
-change_values($letters, $value, $to);
-var_dump($letters);
-
-
 ?>
 <html lang="en">
 <head>
@@ -39,6 +16,11 @@ var_dump($letters);
     <link rel="stylesheet" href="style.css?<?php print time(); ?>">
 </head>
 <body>
-
+<h1><?php print $answer; ?></h1>
+<form method="post">
+    <input type="text" name="number">
+    <input type="submit" name="mygtukas_kvadratas" value="kvadratas">
+    <input type="submit" name="mygtukas_saknis" value="saknis">
+</form>
 </body>
 </html>
