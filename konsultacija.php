@@ -1,41 +1,48 @@
 <?php
-$movies =
-    [
-        [
-            'name' => 'Avatar',
-            'director' => 'James Cameron',
-            'image' => 'https://static.wixstatic.com/media/00f4ca_4b183e5a23a443119c3e54bc20474422~mv2.jpg',
-            'genres' => ['Action', 'Adventure', 'Action',],
-            'actors' => ['Sam Wortinghem', 'Zoe Saldma', 'Sigonrey Wildman',],
-            'year' => 2013,
-        ],
-        [
-            'name' => 'Avengers: Endgame',
-            'director' => 'Anthony Russe',
-            'image' => 'https://i.pinimg.com/originals/92/c8/e0/92c8e00b34fcfdeaf605a0647c21adb3.jpg',
-            'genres' => ['Action', 'Adventure', 'Drama',],
-            'actors' => ['Roben Downey Jr.', 'Chris Evans', 'Seman Harleydavidson',],
-            'year' => 2014,
-        ],
-        [
-            'name' => 'Django Unchained',
-            'director' => 'Quentin Tarantine',
-            'image' => 'https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_UY1200_CR90,0,630,1200_AL_.jpg',
-            'genres' => ['Drama', 'Western',],
-            'actors' => ['Jame Foxx', 'Cristoug Waltz', 'Leonardo DiCaprio',],
-            'year' => 2012,
-        ],
-    ];
+$hurdle_jump = [rand(1, 10), rand(1, 10), rand(1, 10), rand(1, 10), rand(1, 10),];
+$jump_height = rand(5,12);
 
+function check_height($jump_height, $hurdle_jump) {
+    foreach ($hurdle_jump as $height) {
+        if($height > $jump_height){
+            return false;
+        }
+    }
+    return true;
+}
 
-function add_name(&$movies, $movie, $name) {
-    foreach ($movies as &$movie_name) {
-        if($movie_name['name'] === $movie) {
-            $movie_name['actors'][] = $name;
+var_dump(check_height($jump_height, $hurdle_jump));
+
+$two_digits = rand(11,99);
+function swap_numbers($number) {
+    $reverse = strrev($number);
+    if ($reverse >= $number) {
+        return true;
+    }
+    return false;
+
+}
+var_dump(swap_numbers($two_digits));
+
+$numbers_array = [80, 50, 60, 90, -50, 5, 0, 88,];
+
+function sort_numbers(&$numbers_array) {
+    sort($numbers_array);
+}
+sort_numbers($numbers_array);
+var_dump($numbers_array);
+
+$random_numbers = [rand(1,3000), rand(1,3000), rand(1,3000), rand(1,3000), rand(1,3000), rand(1,3000),];
+
+function remove_odd(&$random_numbers) {
+    foreach ($random_numbers as $index => &$number) {
+        if ($number % 2 !== 0) {
+            unset($random_numbers[$index]);
         }
     }
 }
-add_name($movies, 'Avatar', 'Liudas Bagdonas');
+remove_odd($random_numbers);
+var_dump($random_numbers)
 ?>
 <html lang="en">
 <head>
@@ -43,47 +50,10 @@ add_name($movies, 'Avatar', 'Liudas Bagdonas');
     <title>Foreach ciklas</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        article {
-            display: flex;
-        }
-        section {
-            width: 200px;
-            border: 1px solid transparent;
-            background-color: lightgrey;
-            margin: 20px;
-            padding: 20px;
-            text-align: center;
-        }
-        ul {
-            list-style: none;
-        }
-        img {
-            height: 200px;
-        }
+
     </style>
 </head>
 <body>
-    <article>
-        <?php foreach ($movies as $index => $value): ?>
-            <section>
-                <h1><?php print $movies[$index]['name']; ?></h1>
-                <h2><?php print $movies[$index]['director']; ?></h2>
-                <img src="<?php print $movies[$index]['image']; ?>" alt="">
-                <h4>Genre:
-                    <?php foreach ($value['genres'] as $item): ?>
-                        <?php $genres[] = $item; ?>
-                    <?php endforeach; ?>
-                    <?php print implode(', ', $genres); $genres = []; ?>
-                </h4>
-                <ul>Actors:
-                    <?php foreach ($value['actors'] as $item): ?>
-                        <li>
-                            <?php print $item; ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </section>
-        <?php endforeach; ?>
-    </article>
+
 </body>
 </html>
