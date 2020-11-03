@@ -1,32 +1,11 @@
 <?php
-var_dump($_POST);
-$name = '';
-$last_name = '';
-$age = '';
-$level = '';
+$count = 0;
+$size = 100;
 
-$form_visibility = 'block';
-$article_visibility = 'none';
-
-function check_form() {
-    if(isset($_POST['name']) && isset($_POST['last_name']) && isset($_POST['age']) && isset($_POST['level'])){
-        return true;
-    }
-    return false;
+if (isset($_POST['button'])) {
+    $count = intval($_POST['button']) + 1;
+    $size += $count * 10;
 }
-
-if (check_form()) {
-    $level = $_POST['level'];
-    $age = $_POST['age'];
-    $last_name = $_POST['last_name'];
-    $name = $_POST['name'];
-    $form_visibility = 'none';
-    $article_visibility = 'block';
-}
-
-$born_year = date('Y') - intval($age);
-$description = "$name $last_name yra gimes $born_year, yra $level PHP programuotojas.";
-
 ?>
 <html lang="en">
 <head>
@@ -35,27 +14,11 @@ $description = "$name $last_name yra gimes $born_year, yra $level PHP programuot
     <link rel="stylesheet" href="style.css?<?php print time(); ?>">
 </head>
 <body>
-<article style="display: <?php print $article_visibility;?>">
-    <h3><?php print $name; ?></h3>
-    <h3><?php print $last_name; ?></h3>
-    <h3><?php print $age; ?></h3>
-    <h3><?php print $level; ?></h3>
-    <h3><?php print $description; ?></h3>
-</article>
-
-
-
-<form method="post" style="display: <?php print $form_visibility; ?>">
-    <input type="text" name="name" placeholder="Vardas" required>
-    <input type="text" name="last_name" placeholder="Pavarde" required>
-    <input type="number" name="age" placeholder="Amzius" required>
-    <label for="">Kaip vertinate savo zinias?</label>
-    <select name="level">
-        <option value="pradedantysis">Pradedantysis</option>
-        <option value="vidutiniokas">Vidutinis</option>
-        <option value="masteris">Masteris</option>
-    </select>
-    <input type="submit" name="submit_button" value="Pateikti">
-</form>
+    <form method="POST">
+        <button type="submit" name="button" value="<?php print $count; ?>">
+            <?php print $count; ?>
+        </button>
+        <img style="height:<?php print $size; ?>; width:<?php print $size; ?>" src="https://lh3.googleusercontent.com/proxy/zZUaeICX4nxLY2cxxD_XL9m7MQdklkWlA1AV0zm5dCeFCOsMjitNLft0gXgqPhgw0tqnsEF3LjyKM-N6JsIAwwYD188AlKhYLP1WvQjnZ2jnZxqbJbKvVsetwV5GpAplD4RczKo" alt="">
+    </form>
 </body>
 </html>

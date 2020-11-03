@@ -1,8 +1,12 @@
 body {
     background-color: darkgrey;
 }
+
 form {
     display: flex;
     flex-direction: column;
-    width: 200px;
+}
+button {
+    height: 30px;
+    width: 30px;
 }
