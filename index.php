@@ -1,30 +1,53 @@
 <?php
-var_dump($_POST);
+require_once './functions/html.php';
+require_once './functions/form.php';
 
 $form = [
-        'email' => [
-            'label' => 'Email',
-            'placeholder' => 'email@email.com',
-            'type' => 'text',
+        'fields' => [
+            'email' => [
+                'label' => 'Email',
+                'type' => 'text',
+                'extra' => [
+                        'attr' => [
+                            'placeholder' => 'Enter email',
+                            'class' => 'input-field'
+                        ]
+                ]
+            ],
+            'password' => [
+                'label' => 'Password',
+                'type' => 'password',
+                'extra' => [
+                    'attr' => [
+                        'placeholder' => 'Enter password',
+                        'class' => 'input-field'
+                    ]
+                ]
+            ],
         ],
-        'password' => [
-            'label' => 'Password',
-            'placeholder' => 'Password...',
-            'type' => 'password',
-    ],
+        'buttons' => [
+            'login' => [
+                'title' => 'Log In',
+                'type' => 'submit',
+                'extra' => [
+                    'attr' => [
+                        'class' => 'btn'
+                    ]
+                ]
+            ],
+            'clear' => [
+                'title' => 'Clear',
+                'type' => 'clear',
+                'extra' => [
+                    'attr' => [
+                        'class' => 'btn'
+                    ]
+                ]
+            ],
+        ]
 ];
 
-function get_clean_input($form) {
-    $parameters = [];
-
-    foreach ($form as $index => $input) {
-        $parameters[$index] = FILTER_SANITIZE_SPECIAL_CHARS;
-    }
-
-    return filter_input_array(INPUT_POST, $parameters);
-}
 $clean_inputs = get_clean_input($form);
-var_dump($clean_inputs);
 ?>
 <html lang="en">
 <head>
@@ -33,14 +56,18 @@ var_dump($clean_inputs);
     <link rel="stylesheet" href="style.css?<?php print time(); ?>">
 </head>
 <body>
-   <form method="POST">
-        <?php foreach($form as $input_name => $input): ?>
-            <label>
-                <?php print $input['label'];?>
-                <input name="<?php print $input_name;?>" type="<?php print $input['type'];?>" placeholder="<?php print $input['placeholder'];?>">
+    <form method="POST">
+        <?php foreach ($form['fields'] as $input_name => $input): ?>
+            <label for="">
+                <span><?php print $input['label']; ?></span>
+                <input <?php print input_attr($input_name, $input); ?>>
             </label>
         <?php endforeach; ?>
-        <button name="button">Log In</button>
+        <?php foreach ($form['buttons'] as $button_id => $button): ?>
+            <button <?php print button_attr($button_id, $button); ?>>
+                <?php print $button['title']; ?>
+            </button>
+        <?php endforeach; ?>
     </form>
 </body>
 </html>
