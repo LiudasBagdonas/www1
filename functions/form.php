@@ -5,8 +5,7 @@
  */
 function get_clean_input($form) {
     $parameters = [];
-
-    foreach ($form as $index => $input) {
+    foreach ($form['fields'] as $index => $input) {
         $parameters[$index] = FILTER_SANITIZE_SPECIAL_CHARS;
     }
 
