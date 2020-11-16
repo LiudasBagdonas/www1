@@ -1,5 +1,5 @@
 <form <?php print form_attr($form); ?>>
-    <?php foreach ($form['fields'] as $field_id => $field): ?>
+    <?php foreach ($form['fields'] as $field_id => &$field): ?>
         <label>
             <span><?php print $field['label']; ?></span>
             <?php if ($field['type'] == 'select') : ?>
@@ -10,6 +10,8 @@
                         </option>
                     <?php endforeach; ?>
                 </select>
+            <?php elseif ($field['type'] == 'textarea'): ?>
+                <textarea <?php print textarea_attr($field_id, $field); ?>><?php print $field['value'] ?? ''; ?></textarea>
             <?php else: ?>
                 <input <?php print input_attr($field_id, $field); ?>>
             <?php endif; ?>
@@ -24,3 +26,4 @@
         </button>
     <?php endforeach; ?>
 </form>
+

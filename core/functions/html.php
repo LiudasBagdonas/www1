@@ -101,3 +101,17 @@ function option_attr(string $option_id, array $field): string
     }
     return html_attr($attributes);
 }
+
+/**
+ * @param string $field_id
+ * @param array $field
+ * @return string
+ */
+function textarea_attr(string $field_id, array $field): string
+{
+    $attr_value = [
+            'name' => $field_id,
+           ] + ($field['extra']['attr'] ?? []);
+
+    return html_attr($attr_value);
+}

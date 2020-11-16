@@ -122,6 +122,21 @@ $form = [
                 'validate_select',
             ]
         ],
+        'message' => [
+            'label' => 'Message area',
+            'type' => 'textarea',
+            'validators' => [
+                'validate_field_not_empty',
+            ],
+            'extra' => [
+                'attr' => [
+                    'placeholder' => 'Enter message...',
+                    'rows' => 5,
+                    'cols' => 20,
+                ]
+            ],
+            'value' => 'Tai yra verte.',
+        ],
     ],
     'buttons' => [
         'login' => [
@@ -149,11 +164,10 @@ $clean_inputs = get_clean_input($form);
 if ($clean_inputs) {
     $success = validate_form($form, $clean_inputs);
     if ($success) {
-        $head = $clean_inputs['head'];
-        $body = $clean_inputs['body'];
+        $body_parts = $clean_inputs;
     }
 }
-
+array_to_file($clean_inputs, ROOT . '/data/db.json');
 var_dump($clean_inputs);
 ?>
 <!doctype html>
@@ -168,9 +182,12 @@ var_dump($clean_inputs);
 <body>
 <?php require ROOT . '/core/templates/form.tpl.php'; ?>
 <article>
-    <?php if (isset($head) && isset($body)): ?>
-        <div class="<?php print $head; ?>"></div>
-        <div class="<?php print $body; ?>"></div>
+    <?php if ($clean_inputs ?? false) : ?>
+        <section class="character">
+            <?php foreach ($body_parts as $parts) : ?>
+                <div class="<?php print $parts; ?>"></div>
+            <?php endforeach; ?>
+        </section>
     <?php endif; ?>
 </article>
 </body>
