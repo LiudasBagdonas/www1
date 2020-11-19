@@ -1,27 +1,38 @@
 <?php
+
 /**
- * @param $array 'File to encode'
- * @param $file_name 'File where array will be encoded(path)'
+ * Save PHP array to file in JSON format
+ *
+ * @param array $array
+ * @param string $file_name
  * @return bool
  */
-function array_to_file($array,$file_name): bool
+function array_to_file(array $array, string $file_name): bool
 {
     $data = json_encode($array);
+
     $bytes_written = file_put_contents($file_name, $data);
 
     return $bytes_written !== false;
 }
 
-function file_to_array(string $file_path)
+/**
+ * Get file and decode it back to PHP array
+ *
+ * @param string $file_name
+ * @return array|bool
+ */
+function file_to_array(string $file_name)
 {
-    if (file_exists($file_path)) {
-        $data = file_get_contents($file_path);
-            if($data !== false) {
-                return json_decode($data, true) ?? [];
-            }
-            return [];
+    if (file_exists($file_name)) {
+        $data = file_get_contents($file_name);
+
+        if ($data !== false) {
+            return json_decode($data, true) ?? [];
+        }
+
+        return [];
     }
 
-    return 'lopas esi';
+    return false;
 }
-

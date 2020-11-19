@@ -1,0 +1,34 @@
+{
+  "credentials": [
+    {
+      "email": "liudasbagd@gmail.com",
+      "password": "qq"
+    }
+  ],
+  "items": [
+    {
+      "name": "Muffin",
+      "price": "50",
+      "image": "https:\/\/media.newyorker.com\/photos\/59096937019dfc3494ea1169\/master\/pass\/Frazier-Bunny-Rabbits.jpg",
+      "description": "Cute creature."
+    },
+    {
+      "name": "Cinabunn",
+      "price": "50",
+      "image": "https:\/\/www.protexinvet.com\/userfiles\/image\/cute-2500929_1920_(1).jpg",
+      "description": "Very cute creature."
+    },
+    {
+      "name": "Cupcake",
+      "price": "49",
+      "image": "https:\/\/miro.medium.com\/max\/12032\/1*99r7mbdm30qA1xrSJBuQjw.jpeg",
+      "description": "Very cutest creature."
+    },
+    {
+      "name": "Bunbun",
+      "price": "40",
+      "image": "https:\/\/www.petlandtexas.com\/wp-content\/uploads\/2016\/08\/Red_Bunny_Petland_Puppy.jpg",
+      "description": "Very most cutest creature."
+    }
+  ]
+}
