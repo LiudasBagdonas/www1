@@ -1,11 +1,6 @@
 <?php
-
-// //////////////////////////////
-// [1] FORM VALIDATORS
-// //////////////////////////////
-
 /**
- * Check if login is successful
+ * Check if login is successful. Input values must match values in credentials array.
  *
  * @param $form_values
  * @param array $form
@@ -13,24 +8,21 @@
  */
 function validate_login($form_values, array &$form): bool
 {
-    $db_data = file_to_array(DB_FILE);
+    $db = new FileDB(DB_FILE);
+    $db->load();
+    $credentials = $db->getRowWhere('credentials',
+        ['email' => $form_values['email'], 'password' => $form_values['password']]);
 
-    foreach ($db_data['credentials'] as $entry) {
-        if ($form_values['email'] === $entry['email']
-            && $form_values['password'] === $entry['password']) {
-
-            return true;
-        }
+    if ($db->getRowWhere('credentials',[
+        'email' => $form_values['email'],
+        'password' => $form_values['password']])) {
+        return true;
     }
 
     $form['error'] = 'Unable to login: check your email and/or password';
 
     return false;
 }
-
-// //////////////////////////////
-// [2] FIELD VALIDATORS
-// //////////////////////////////
 
 /**
  * Check if email is available for registration, i.e. if it is not already taken
@@ -41,15 +33,17 @@ function validate_login($form_values, array &$form): bool
  */
 function validate_user_unique(string $field_value, array &$field): bool
 {
-    $db_data = file_to_array(DB_FILE);
+    $db = new FileDB(DB_FILE);
+    $db->load();
 
-    foreach ($db_data['credentials'] as $entry) {
-        if ($field_value === $entry['email']) {
+    if ($db->tableExists('credentials')) {
+        $email_taken = $db->getRowWhere('credentials', ['email' => $field_value]);
+        if ($email_taken) {
             $field['error'] = 'Email is already taken: enter new email.';
 
             return false;
         }
-    }
 
-    return true;
+        return true;
+    }
 }

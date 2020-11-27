@@ -2,13 +2,16 @@
 
 require '../bootloader.php';
 
-if (!is_logged_in()) {
-    header('Location: /login.php');
+$db->load();
+$db_data = $db->getData();
+$my_poo = my_poo();
+
+if (is_logged_in()) {
+    $data = $my_poo;
+} else {
+    $data = $db_data['items'];
 }
 
-$db_data = file_to_array(DB_FILE);
-
-$h1 = 'Welcome to Pet Shop';
 $nav = nav();
 ?>
 <html>
@@ -19,21 +22,23 @@ $nav = nav();
 </head>
 <body>
 <header>
-    <?php require ROOT . './app/templates/nav.php';?>
+    <?php require ROOT . './app/templates/nav.php'; ?>
 </header>
 <main>
-    <h1><?php print $h1; ?></h1>
-    <!-- Place for products grid -->
-    <article class="items_box">
-        <?php foreach ($db_data['items'] as $item): ?>
-            <section class="item_box">
-                <span class="item_title"><?php print $item['name'] ;?></span>
-                <div class="item_image" style="background-image: url('<?php print $item['image']; ?>')"></div>
-                <p class="item_price"><?php print $item['price']; ?> Eur.</p>
-                <p class="item_description"><?php print $item['description']; ?></p>
+    <div class="poo_wall_box">
+        <div class="hanky_box"></div>
+
+        <?php foreach ($data as $item_index => $item): ?>
+
+            <section class="poo_box bg_<?php print $item['color']; ?>" style="
+                    top: <?php print $item['yaxes']; ?>px;
+                    left: <?php print $item['xaxes']; ?>px;">
+                <span></span>
             </section>
+
         <?php endforeach; ?>
-    </article>
+
+    </div>
 </main>
 </body>
 </html>

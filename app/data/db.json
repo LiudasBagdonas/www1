@@ -1,34 +1,44 @@
 {
   "credentials": [
     {
+      "email": "test@test.lt",
+      "password": "test"
+    },
+    {
       "email": "liudasbagd@gmail.com",
       "password": "qq"
     }
   ],
   "items": [
     {
-      "name": "Muffin",
-      "price": "50",
-      "image": "https:\/\/media.newyorker.com\/photos\/59096937019dfc3494ea1169\/master\/pass\/Frazier-Bunny-Rabbits.jpg",
-      "description": "Cute creature."
+      "xaxes": "50",
+      "yaxes": "50",
+      "color": "green",
+      "id": "liudasbagd@gmail.com"
     },
     {
-      "name": "Cinabunn",
-      "price": "50",
-      "image": "https:\/\/www.protexinvet.com\/userfiles\/image\/cute-2500929_1920_(1).jpg",
-      "description": "Very cute creature."
+      "xaxes": "50",
+      "yaxes": "60",
+      "color": "red",
+      "id": "liudasffbagd@gmail.com"
     },
     {
-      "name": "Cupcake",
-      "price": "49",
-      "image": "https:\/\/miro.medium.com\/max\/12032\/1*99r7mbdm30qA1xrSJBuQjw.jpeg",
-      "description": "Very cutest creature."
+      "xaxes": "50",
+      "yaxes": "40",
+      "color": "green",
+      "id": "liudasffbagd@gmail.com"
     },
     {
-      "name": "Bunbun",
-      "price": "40",
-      "image": "https:\/\/www.petlandtexas.com\/wp-content\/uploads\/2016\/08\/Red_Bunny_Petland_Puppy.jpg",
-      "description": "Very most cutest creature."
+      "xaxes": "50",
+      "yaxes": "70",
+      "color": "blue",
+      "id": "liudasbagd@gmail.com"
+    },
+    {
+      "xaxes": "60",
+      "yaxes": "50",
+      "color": "green",
+      "id": "liudasbagd@gmail.com"
     }
   ]
 }

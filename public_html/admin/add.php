@@ -1,6 +1,7 @@
 <?php
 require '../../bootloader.php';
 
+
 if (!is_logged_in()) {
     header('Location: /login.php');
 }
@@ -10,21 +11,8 @@ $form = [
         'method' => 'POST',
     ],
     'fields' => [
-        'name' => [
-            'label' => 'Item Name',
-            'type' => 'text',
-            'validators' => [
-                'validate_field_not_empty',
-            ],
-            'extra' => [
-                'attr' => [
-                    'placeholder' => 'Enter Item Name',
-                    'class' => 'input-field',
-                ]
-            ]
-        ],
-        'price' => [
-            'label' => 'Price',
+        'xaxes' => [
+            'label' => 'X coordinates',
             'type' => 'number',
             'validators' => [
                 'validate_field_not_empty',
@@ -32,33 +20,36 @@ $form = [
             ],
             'extra' => [
                 'attr' => [
-                    'placeholder' => '30 £...',
+                    'placeholder' => 'X coordinates...',
                     'class' => 'input-field',
                 ]
             ]
         ],
-        'image' => [
-            'label' => 'Image of Item',
-            'type' => 'text',
+        'yaxes' => [
+            'label' => 'Y coordinates',
+            'type' => 'number',
             'validators' => [
                 'validate_field_not_empty',
+                'validate_number'
             ],
             'extra' => [
                 'attr' => [
-                    'placeholder' => 'Enter url of image',
+                    'placeholder' => 'Y coordinates...',
                     'class' => 'input-field',
                 ]
             ]
         ],
-        'description' => [
-            'label' => 'Description',
-            'type' => 'textarea',
+        'color' => [
+            'label' => 'Select color',
+            'type' => 'select',
+            'value' => 'option',
+            'options' => ['black' => 'Black', 'red' => 'Red', 'blue' => 'Blue', 'green' => 'Green'],
             'validators' => [
-                'validate_field_not_empty',
+                'validate_select'
             ],
             'extra' => [
                 'attr' => [
-                    'placeholder' => 'Something something...',
+                    'placeholder' => 'colors',
                     'class' => 'input-field',
                 ]
             ]
@@ -76,7 +67,8 @@ $form = [
         ]
     ],
     'validators' => [
-
+//        'validate_coordinates',
+        'validate_coordinates_overlap'
     ]
 ];
 
@@ -89,14 +81,14 @@ if ($clean_inputs) {
 
     if ($is_valid) {
 
-        // Get data from file
-        $input_from_json = file_to_array(ROOT . '/app/data/db.json');
-        // Append new data from form
-        $input_from_json['items'][] = $clean_inputs;
-        // Save old data together with appended data back to file
-        array_to_file($input_from_json, ROOT . '/app/data/db.json');
+        $user_id = [
+            'id' => $_SESSION['email']
+        ];
 
-//        header('Location: /index.php');
+        $db->load();
+        $db->createTable('items');
+        $db->insertRow('items', $clean_inputs + $user_id);
+        $db->save();
 
     }
 

@@ -5,7 +5,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f54437b8-92ce-4aaf-a460-70288b84e110" name="Default Changelist" comment="" />
+    <list default="true" id="f54437b8-92ce-4aaf-a460-70288b84e110" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/fileDB.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/FileDB.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/install.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/form/validators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/generators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/generators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootloader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions/form/validators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/functions/html.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions/html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/konsultacija.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/admin/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/admin/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/media/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/media/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +35,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,6 +57,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\liuda\OneDrive\Desktop\www\public_html\media" />
+      <recent name="C:\Users\liuda\OneDrive\Desktop\www\app" />
+      <recent name="C:\Users\liuda\OneDrive\Desktop\www\public_html" />
+      <recent name="C:\Users\liuda\OneDrive\Desktop\www\core\functions\form" />
+      <recent name="C:\Users\liuda\OneDrive\Desktop\www\core\functions" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -40,6 +80,60 @@
       <option name="presentableId" value="Default" />
       <updated>1602834155635</updated>
       <workItem from="1602834191735" duration="11504000" />
+      <workItem from="1603455219108" duration="3241000" />
+      <workItem from="1603694868732" duration="1523000" />
+      <workItem from="1603697250619" duration="20157000" />
+      <workItem from="1603782468503" duration="13080000" />
+      <workItem from="1603798697737" duration="11658000" />
+      <workItem from="1603867696357" duration="25121000" />
+      <workItem from="1603954870447" duration="11880000" />
+      <workItem from="1603972880582" duration="11351000" />
+      <workItem from="1604041421282" duration="12536000" />
+      <workItem from="1604060450404" duration="8860000" />
+      <workItem from="1604386315393" duration="14949000" />
+      <workItem from="1604406008340" duration="9238000" />
+      <workItem from="1604472584170" duration="13482000" />
+      <workItem from="1604491335403" duration="8604000" />
+      <workItem from="1604559327050" duration="11477000" />
+      <workItem from="1604578391935" duration="8453000" />
+      <workItem from="1604597699427" duration="30000" />
+      <workItem from="1604649881846" duration="2632000" />
+      <workItem from="1604905073509" duration="8326000" />
+      <workItem from="1604990784645" duration="5542000" />
+      <workItem from="1605009942379" duration="42000" />
+      <workItem from="1605010854242" duration="1550000" />
+      <workItem from="1605019820264" duration="734000" />
+      <workItem from="1605077871381" duration="14526000" />
+      <workItem from="1605095994797" duration="1444000" />
+      <workItem from="1605097486633" duration="19000" />
+      <workItem from="1605104704198" duration="1601000" />
+      <workItem from="1605163735465" duration="15293000" />
+      <workItem from="1605180410164" duration="7008000" />
+      <workItem from="1605201495007" duration="983000" />
+      <workItem from="1605250333871" duration="14224000" />
+      <workItem from="1605270090843" duration="24000" />
+      <workItem from="1605510121735" duration="14358000" />
+      <workItem from="1605528358645" duration="44000" />
+      <workItem from="1605596197499" duration="13353000" />
+      <workItem from="1605614543478" duration="175000" />
+      <workItem from="1605682636738" duration="10757000" />
+      <workItem from="1605701378549" duration="41000" />
+      <workItem from="1605769282985" duration="12000000" />
+      <workItem from="1605852489781" duration="54000" />
+      <workItem from="1605859663793" duration="700000" />
+      <workItem from="1605860688416" duration="1141000" />
+      <workItem from="1605863608249" duration="59000" />
+      <workItem from="1605865191875" duration="17000" />
+      <workItem from="1606114720567" duration="7740000" />
+      <workItem from="1606133139683" duration="58000" />
+      <workItem from="1606200974828" duration="14172000" />
+      <workItem from="1606219892930" duration="169000" />
+      <workItem from="1606287328260" duration="12223000" />
+      <workItem from="1606305965846" duration="58000" />
+      <workItem from="1606373741621" duration="14320000" />
+      <workItem from="1606392446271" duration="46000" />
+      <workItem from="1606460566563" duration="1001000" />
+      <workItem from="1606462801036" duration="15042000" />
     </task>
     <servers />
   </component>
@@ -56,11 +150,43 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1602848148848">
+    <state x="455" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604487581080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1602848148848" />
+    <state x="455" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1604487581080" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606462257765">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606462257765" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1606387678579">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1606387678579" />
+    <state x="390" y="73" width="585" height="582" key="find.popup" timestamp="1606382902739">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="73" width="585" height="582" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606382902739" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1604483749686">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1604483749686" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605003882850">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605003882850" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/classes/fileDB.php</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

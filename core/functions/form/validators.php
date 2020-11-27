@@ -98,7 +98,7 @@ function validate_field_range(string $field_value, array &$field, array $params)
 function validate_select(string $field_input, array &$field): bool
 {
     if (!isset($field['options'][$field_input])) {
-        $field['error'] = 'Input doesn\'t exist';
+        $field['error'] = 'Color doesn\'t exist';
 
         return false;
     }
@@ -124,13 +124,57 @@ function validate_email(string $field_value, array &$field): bool
     return true;
 }
 
+/**
+ * Function checks if input area is filled with numbers.
+ * @param string $field_value
+ * @param array $field
+ * @return bool
+ */
 function validate_number(string $field_value, array &$field): bool
 {
-    if(is_numeric($field_value)){
+    if (is_numeric($field_value)) {
 
         return true;
     }
     $field['error'] = 'Price must be written by numbers.';
+    return false;
+}
+
+/**
+ * Check if coordinate is not taken.
+ * @param $form_values
+ * @param array $form
+ * @return bool
+ */
+function validate_coordinates_overlap($form_values, array &$form): bool
+{
+    $db = new FileDB(DB_FILE);
+    $db->load();
+    $db_data = $db->getData();
+    $result = true;
+
+    if (count($db_data['items']) > 0) {
+        foreach ($db_data['items'] as $item) {
+            $xaxes = $item['xaxes'] - $form_values['xaxes'];
+            $yaxes = $item['yaxes'] - $form_values['yaxes'];
+
+            if ($xaxes <= -10 || $xaxes >= 10) {
+                $result = true;
+            } else if ($yaxes <= -10 || $yaxes >= 10) {
+                $result = true;
+            } else {
+                $form['error'] = 'Coordinates taken';
+
+                return false;
+            }
+
+        }
+    }
+    if($result) {
+        return true;
+    }
+    $form['error'] = 'Coordinates taken';
+
     return false;
 }
 

@@ -2,12 +2,15 @@
 
 require '../bootloader.php';
 
+$db->load();
+$db_data = $db->getData();
+
 $table = [
     'headers' => [
         'Username',
         'Password'
     ],
-    'rows' => file_to_array(DB_FILE)
+    'rows' => $db_data['credentials']
 ];
 
 ?>

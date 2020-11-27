@@ -6,18 +6,14 @@
  */
 function is_logged_in(): bool
 {
-        if ($_SESSION) {
-            $db_data = file_to_array(DB_FILE);
+    $db = new FileDB(DB_FILE);
+    $db->load();
 
-            foreach ($db_data['credentials'] as $entry) {
-
-                if ($entry['email'] === $_SESSION['email']
-                    && $entry['password'] === $_SESSION['password']) {
-
-                    return true;
-                }
-            }
-        }
+    if ($_SESSION) {
+        return (bool)$db->getRowWhere('credentials', [
+            'email' => $_SESSION['email'],
+            'password' => $_SESSION['password']]);
+    }
 
     return false;
 }

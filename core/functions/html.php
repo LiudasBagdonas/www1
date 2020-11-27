@@ -82,13 +82,13 @@ function select_attr(string $field_id, array $field): string
     return html_attr($attributes);
 }
 
-function option_attr(string $option_id, array $option): string
+function option_attr(string $option_id, array $field): string
 {
     $attributes = [
         'value' => $option_id,
     ];
 
-    if ($option['value'] === $option_id) {
+    if ($field['value'] ?? null === $option_id) {
         $attributes['selected'] = 'selected';
     }
 

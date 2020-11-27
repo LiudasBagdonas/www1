@@ -42,3 +42,16 @@ function nav()
         return $nav;
     }
 }
+
+function my_poo(): array
+{
+    $db = new FileDB(DB_FILE);
+    $db->load();
+    $my_poo = [];
+
+    if (is_logged_in()) {
+        $my_poo = $db->getRowsWhere('items', $conditions = ['id' => $_SESSION['email']]);
+    }
+
+    return $my_poo;
+}

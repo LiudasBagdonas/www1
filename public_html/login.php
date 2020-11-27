@@ -7,6 +7,7 @@ if (is_logged_in()) {
     header('Location: /admin/add.php');
 }
 
+
 $form = [
     'attr' => [
         'method' => 'POST',
@@ -89,7 +90,6 @@ if ($clean_inputs) {
 </header>
 <main>
     <?php require ROOT . '/core/templates/form.tpl.php'; ?>
-    <?php if (isset($text_output)) print $text_output; ?>
 </main>
 </body>
 </html>
