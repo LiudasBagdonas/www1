@@ -7,6 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f54437b8-92ce-4aaf-a460-70288b84e110" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions/form/validators.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +117,8 @@
       <workItem from="1606460566563" duration="1001000" />
       <workItem from="1606462801036" duration="15042000" />
       <workItem from="1606479440649" duration="285000" />
-      <workItem from="1606485483236" duration="134000" />
+      <workItem from="1606485483236" duration="753000" />
+      <workItem from="1606635429159" duration="418000" />
     </task>
     <servers />
   </component>
@@ -141,10 +143,18 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="568" y="227" key="#Notifications" timestamp="1606486002868">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1606486002868" />
     <state x="455" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604487581080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="455" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1604487581080" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1606486128368">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1606486128368" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606479738171">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -157,6 +167,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1606485639349" />
+    <state x="530" y="278" key="VCS.ChangelistChooser" timestamp="1606485920186">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="530" y="278" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1606485920186" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606486112266">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606486112266" />
     <state x="390" y="73" width="585" height="582" key="find.popup" timestamp="1606382902739">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

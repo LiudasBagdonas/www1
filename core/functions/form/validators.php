@@ -141,7 +141,7 @@ function validate_number(string $field_value, array &$field): bool
 }
 
 /**
- * Check if coordinate is not taken.
+ * Check if coordinate is not taken and coordinates are in appropriate range.
  * @param $form_values
  * @param array $form
  * @return bool
@@ -152,6 +152,13 @@ function validate_coordinates_overlap($form_values, array &$form): bool
     $db->load();
     $db_data = $db->getData();
     $result = true;
+
+    if (($form_values['xaxes'] < 0 || $form_values['xaxes'] > 490) ||
+        ($form_values['yaxes'] < 0 || $form_values['yaxes'] > 490)) {
+
+        $form['error'] = 'Coordinates must be between 0 and 490';
+        return false;
+    }
 
     if (count($db_data['items']) > 0) {
         foreach ($db_data['items'] as $item) {
