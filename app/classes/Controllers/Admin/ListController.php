@@ -60,7 +60,7 @@ class ListController extends AuthController
                 $clean_inputs = $this->form->values();
                 App::$db->deleteRow('items', $clean_inputs['row_id']);
 
-//                header('Location: /');
+                header('Location: /admin/list');
             }
         }
 

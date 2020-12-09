@@ -12,3 +12,5 @@ Router::add('add', '/admin/add', '\App\Controllers\Admin\AddController', 'add');
 Router::add('edit', '/admin/edit', '\App\Controllers\Admin\EditController', 'edit');
 Router::add('list', '/admin/list', '\App\Controllers\Admin\ListController', 'list');
 Router::add('logout', '/logout', '\App\Controllers\Base\LogoutController', 'logout');
+
+Router::add('install', '/install', '\App\Controllers\InstallController', 'install');
