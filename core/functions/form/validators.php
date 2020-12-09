@@ -1,5 +1,7 @@
 <?php
 
+use App\App;
+
 // //////////////////////////////
 // [1] FORM VALIDATORS
 // //////////////////////////////
@@ -12,7 +14,7 @@
  * @param array $params
  * @return bool
  */
-function validate_fields_match($form_values, array &$form, array $params): bool
+function validate_field_match($form_values, array &$form, array $params): bool
 {
     foreach ($params as $field_index) {
         if ($form_values[$params[0]] !== $form_values[$field_index]) {
@@ -137,51 +139,29 @@ function validate_number(string $field_value, array &$field): bool
         return true;
     }
     $field['error'] = 'Price must be written by numbers.';
+
     return false;
 }
 
 /**
- * Check if coordinate is not taken and coordinates are in appropriate range.
- * @param $form_values
- * @param array $form
+ * Check if row exists in db and input value matches row_id value.
+ * @param string $field_value
+ * @param array $field
  * @return bool
  */
-function validate_coordinates_overlap($form_values, array &$form): bool
+function validate_id_match($field_value, array &$field): bool
 {
-    $db = new FileDB(DB_FILE);
-    $db->load();
-    $db_data = $db->getData();
-    $result = true;
+$poo = App::$db->getRowById('items', $field_value);
 
-    if (($form_values['xaxes'] < 0 || $form_values['xaxes'] > 490) ||
-        ($form_values['yaxes'] < 0 || $form_values['yaxes'] > 490)) {
+    if (App::$db->rowExists('items', $field_value)) {
+        if ($poo['id'] === $_SESSION['email']) {
+            return true;
+        }
+        $field['error'] = 'This is not your poo.';
 
-        $form['error'] = 'Coordinates must be between 0 and 490';
         return false;
     }
-
-    if (count($db_data['items']) > 0) {
-        foreach ($db_data['items'] as $item) {
-            $xaxes = $item['xaxes'] - $form_values['xaxes'];
-            $yaxes = $item['yaxes'] - $form_values['yaxes'];
-
-            if ($xaxes <= -10 || $xaxes >= 10) {
-                $result = true;
-            } else if ($yaxes <= -10 || $yaxes >= 10) {
-                $result = true;
-            } else {
-                $form['error'] = 'Coordinates taken';
-
-                return false;
-            }
-
-        }
-    }
-    if($result) {
-        return true;
-    }
-    $form['error'] = 'Coordinates taken';
+    $field['error'] = 'Poo doesnt exist.';
 
     return false;
 }
-

@@ -101,7 +101,7 @@ form p {
 
 .error {
     color: red;
-    font-size: .8em;
+    font-size: 0.8em;
 }
 
 select.input-field {

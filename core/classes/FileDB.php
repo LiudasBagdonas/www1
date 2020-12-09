@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 /**
  * Class FileDB
  */
@@ -138,14 +140,14 @@ class FileDB
     public function insertRow(string $table_name, array $row, $row_id = null)
     {
         if (!isset($this->data[$table_name][$row_id])) {
-            if ($row_id) {
-                $this->data[$table_name][$row_id] = $row;
-            } else {
+            if ($row_id === null) {
                 $this->data[$table_name][] = $row;
+                $row_id = array_key_last($this->data[$table_name]);
+            } else {
+                $this->data[$table_name][$row_id] = $row;
             }
-            return array_key_last($this->data[$table_name]);
+            return $row_id;
         }
-
         return false;
     }
 
@@ -187,7 +189,7 @@ class FileDB
     public function deleteRow(string $table_name, $row_id): bool
     {
         if ($this->rowExists($table_name, $row_id)) {
-            unset($this->data[$table_name[$row_id]]);
+            unset($this->data[$table_name][$row_id]);
 
             return true;
         }
@@ -222,6 +224,8 @@ class FileDB
     {
         $results = [];
 
+        if (isset($this->data[$table_name])) {
+
         foreach ($this->data[$table_name] as $row_id => $row) {
             $found = true;
 
@@ -236,6 +240,7 @@ class FileDB
                 $results[$row_id] = $row;
             }
         }
+    }
         return $results;
     }
 
@@ -244,12 +249,12 @@ class FileDB
      * @param array $condition
      * @return false|array
      */
-    public function getRowWhere(string $table_name, array $condition)
+    public function getRowWhere(string $table_name, array $conditions = [])
     {
-        foreach ($this->data[$table_name] as $row_id => $row) {
+        foreach ($this->data[$table_name] ?? [] as $row_id => $row) {
             $found = true;
 
-            foreach ($condition as $condition_id => $condition_value) {
+            foreach ($conditions as $condition_id => $condition_value) {
                 if ($row[$condition_id] !== $condition_value) {
                     $found = false;
                     break;

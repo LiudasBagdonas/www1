@@ -6,26 +6,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f54437b8-92ce-4aaf-a460-70288b84e110" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/classes/Abstracts/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Admin/AddController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Admin/EditController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Admin/ListController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Base/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Base/GuestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/Base/LogoutController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Controllers/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/BasePage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/Admin/AddForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/Admin/AddTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/Admin/DeleteForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/Admin/EditForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/LoginForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Forms/RegisterForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/classes/Views/Navigation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/config/routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/content/add.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/content/edit.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/content/index.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/content/list.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/content/login.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/content/register.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/Abstracts/Router.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/Router.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/Session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/View.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/Views/Form.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/Views/Link.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/Views/Page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/classes/Views/Table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/link.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/page.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/fileDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/form/validators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/generators.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/nav.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootloader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/classes/FileDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/classes/FileDB.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions/form/validators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/functions/html.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/functions/html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/form.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/form.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/table.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/table.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/admin/add.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/install.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/install.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/logout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/media/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/media/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/users.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="package.json" />
+        <option value="composer.json" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1ix0uFSIvRjj8YxBlIyiTGSKLJP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,6 +107,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="COPY_ALWAYS" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -119,6 +187,26 @@
       <workItem from="1606479440649" duration="285000" />
       <workItem from="1606485483236" duration="753000" />
       <workItem from="1606635429159" duration="418000" />
+      <workItem from="1606676175436" duration="307000" />
+      <workItem from="1606718952380" duration="12303000" />
+      <workItem from="1606738049671" duration="50000" />
+      <workItem from="1606801876162" duration="620000" />
+      <workItem from="1606805841999" duration="19037000" />
+      <workItem from="1606892215722" duration="14138000" />
+      <workItem from="1606912222163" duration="185000" />
+      <workItem from="1606978502427" duration="19802000" />
+      <workItem from="1607002177775" duration="73000" />
+      <workItem from="1607065100848" duration="14578000" />
+      <workItem from="1607083207605" duration="1242000" />
+      <workItem from="1607084841386" duration="629000" />
+      <workItem from="1607236644808" duration="1167000" />
+      <workItem from="1607324397000" duration="15330000" />
+      <workItem from="1607344192782" duration="104000" />
+      <workItem from="1607344452849" duration="137000" />
+      <workItem from="1607410428302" duration="10514000" />
+      <workItem from="1607428892762" duration="43000" />
+      <workItem from="1607497577867" duration="14124000" />
+      <workItem from="1607516596401" duration="6220000" />
     </task>
     <servers />
   </component>
@@ -143,26 +231,46 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="0" width="816" height="728" key="#Intentions" timestamp="1607507622330">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="0" width="816" height="728" key="#Intentions/0.0.1366.728@0.0.1366.728" timestamp="1607507622330" />
     <state x="568" y="227" key="#Notifications" timestamp="1606486002868">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1606486002868" />
-    <state x="455" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604487581080">
+    <state x="455" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606725628675">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="455" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1604487581080" />
+    <state x="455" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606725628675" />
+    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1607502135788">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1607502135788" />
+    <state x="424" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607416328546">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="424" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1607416328546" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607420612820">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1607420612820" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1606486128368">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1606486128368" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606479738171">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1607428944132">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606479738171" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1606387678579">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607428944132" />
+    <state x="450" y="87" key="NewPhpClassDialog" timestamp="1607501797155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1606387678579" />
+    <state x="450" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1607501797155" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1607502347913">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1607502347913" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1606485639349">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -175,28 +283,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606486112266" />
-    <state x="390" y="73" width="585" height="582" key="find.popup" timestamp="1606382902739">
+    <state x="438" y="172" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1607501768983">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="73" width="585" height="582" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606382902739" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1604483749686">
+    <state x="438" y="172" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1607501768983" />
+    <state x="390" y="73" width="585" height="582" key="find.popup" timestamp="1607327047793">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1604483749686" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605003882850">
+    <state x="390" y="73" width="585" height="582" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1607327047793" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1606817213675">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605003882850" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/classes/fileDB.php</url>
-          <line>1</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606817213675" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607416557740">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607416557740" />
   </component>
 </project>
